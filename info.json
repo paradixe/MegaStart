@@ -1,0 +1,9 @@
+{
+	"name": "megastart",
+	"version": "0.0.1",
+	"factorio_version": "1.1",
+	"title": "MegaStart",
+	"author": "para00",
+	"description": "MegaStart speeds up the early game w/ loaded armor, spidertrons and early building materials. Customize your start further by modifying the control.lua file. Requires spidertron-extended, Faster_Cars and Power-Armor-MK3 mods. Intended for advanced players.",
+	"dependencies": ["base >= 1.1", "spidertron-extended >= 0.3.15", "Faster_Cars >= 0.1.1", "Power Armor MK3 >= 0.4.2"]
+}
