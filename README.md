@@ -28,9 +28,13 @@ Inspired by the original faster-start mod [https://mods.factorio.com/mod/faster-
 Notes:
 - All spidertrons spawn in the same place. Get in and move to see the next one.
 - All spidertrons have the same color.
-- Self inventory is limited on mod initalization. If you want more things or different things, change the spidertron's inventory.
 
-Pictures:
-<div align="center"><img src="https://github.com/paradixe/MegaStart/assets/10002681/8e19069f-155e-435f-83cd-59604728d4f8" width="400">
-<img src="https://github.com/paradixe/MegaStart/assets/10002681/5b573d44-4181-4e1a-8f9e-00d4af4a1c9c" width="400">
-<img src="https://github.com/paradixe/MegaStart/assets/10002681/6f8d55ec-af7b-442c-9785-d2e21de2690a" width="400">,</div>
+Known Bugs:
+- Self inventory is limited on mod initalization. If you want more things or different things, change the spidertron's inventory.
+- If downloading from github, remain the zip "megastart_0.0.1.zip"
+
+Spidertrons:
+<div align="center"><img src="https://github.com/paradixe/MegaStart/assets/10002681/63f6c9ad-bbb9-49d7-bbac-f994e9743918" width="300">
+<img src="https://github.com/paradixe/MegaStart/assets/10002681/d419be43-ae4f-4dc2-a27a-5212641aeff7" width="300">
+<img src="https://github.com/paradixe/MegaStart/assets/10002681/95657bdb-d3ae-4d69-84a1-0d6a06ec5a17" width="300">,</div>
+
