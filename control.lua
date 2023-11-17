@@ -43,6 +43,7 @@
 		-- transportation
 		{"carmk3", 1},
 		{"repair-pack", 50},
+		{"spidertron-remote", 4},
 		-- electricity
 		{"big-electric-pole", 100},
 		{"medium-electric-pole", 100},
@@ -150,25 +151,33 @@
 			end
 		end
 
-		-- Create Spidertrons with specific roles
-		local function createSpidertrons(player)
-		-- Number of Spidertrons
-			local spidertronTypes = {
-				{inventory = constructionInventory, quantity = 1},
-				{inventory = militaryInventory, quantity = 2},
-				{inventory = allRounderInventory, quantity = 1},
-			}
+	-- Add a random color function
+local function randomColor()
+    return {r = math.random(), g = math.random(), b = math.random(), a = 1}
+end
+
+-- Create Spidertrons with specific roles
+local function createSpidertrons(player)
+    -- Number of Spidertrons
+    local spidertronTypes = {
+        {inventory = constructionInventory, quantity = 1},
+        {inventory = militaryInventory, quantity = 2},
+        {inventory = allRounderInventory, quantity = 1},
+    }
 
     for _, spidertronType in pairs(spidertronTypes) do
         for i = 1, spidertronType.quantity do
+            -- Add small random offsets for position
             local position = player.surface.find_non_colliding_position("spidertronmk3", player.position, 10, 1)
             if position then
+                position.x = position.x + math.random(-5, 5)
+                position.y = position.y + math.random(-5, 5)
                 local spidertron = player.surface.create_entity{name="spidertronmk3", position=position, force=player.force}
                 if spidertron and spidertron.valid then
                     log("Spidertronmk3 created at position: " .. serpent.line(position))
                     -- Check if the spidertron has a grid and add equipment
                     if spidertron.grid then
-					-- Spidertron Equipment, Shared between all Spidertrons
+                        -- Spidertron Equipment, Shared between all Spidertrons
                         local spidertronEquipment = {
                             {"fusion-reactor-equipment", 8},
                             {"personal-roboport-mk2-equipment", 6},
@@ -177,12 +186,15 @@
                             {"energy-shield-mk2-equipment", 4},
                             {"personal-laser-defense-equipment", 6},
                         }
-						for _, equip in pairs(spidertronEquipment) do
-							for i = 1, equip[2] do
-								spidertron.grid.put{name = equip[1]}
-							end
-						end
+                        for _, equip in pairs(spidertronEquipment) do
+                            for i = 1, equip[2] do
+                                spidertron.grid.put{name = equip[1]}
+                            end
+                        end
                         addItemsToSpidertron(spidertron, spidertronType.inventory)
+
+                        -- Add a random color to each spidertron
+                        spidertron.color = randomColor()
                     else
                         log("Failed to create Spidertronmk3")
                     end
